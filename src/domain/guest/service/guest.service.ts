@@ -1,13 +1,13 @@
 import { Injectable } from '@nestjs/common';
-import { GuestRepository } from '../repositories/guestRepository';
 import { CreateGuestDto } from '../dto/createGuestDto';
 import { Guest } from '../entities/guestEntity';
+import { CreateGuestUseCase } from '../use-cases/createGuestUseCase';
 
 @Injectable()
 export class GuestService {
-  constructor(private readonly guestRepository: GuestRepository) {}
+  constructor(private readonly createGuestUseCase: CreateGuestUseCase) {}
 
-  async create(createGuestDto: CreateGuestDto): Promise<Guest> {
-    return this.guestRepository.create(createGuestDto);
+  async createGuest(createGuestDto: CreateGuestDto): Promise<Guest> {
+    return this.createGuestUseCase.execute(createGuestDto);
   }
 }

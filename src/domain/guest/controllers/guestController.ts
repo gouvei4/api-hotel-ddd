@@ -3,12 +3,12 @@ import { GuestService } from '../service/guest.service';
 import { CreateGuestDto } from '../dto/createGuestDto';
 import { Guest } from '../entities/guestEntity';
 
-@Controller('guest')
+@Controller('guests')
 export class GuestController {
   constructor(private readonly guestService: GuestService) {}
 
   @Post()
   async create(@Body() createGuestDto: CreateGuestDto): Promise<Guest> {
-    return this.guestService.create(createGuestDto);
+    return this.guestService.createGuest(createGuestDto);
   }
 }
