@@ -41,6 +41,7 @@ export class CreateRoomDto {
   @IsOptional()
   @IsString({ message: 'Descripton ust be a string' })
   readonly description?: string;
+
   @IsString({ message: 'Amenities must be a string' })
   readonly amenities?: string;
 }
