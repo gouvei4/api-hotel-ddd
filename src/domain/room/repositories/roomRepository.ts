@@ -12,4 +12,8 @@ export class RoomRepository {
     const createdRoom = new this.roomModel(createRoomDto);
     return createdRoom.save();
   }
+
+  async findAll(): Promise<Room[]> {
+    return this.roomModel.find().exec();
+  }
 }

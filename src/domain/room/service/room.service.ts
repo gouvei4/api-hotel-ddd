@@ -1,13 +1,13 @@
 import { Injectable } from '@nestjs/common';
-import { RoomRepository } from '../repositories/roomRepository';
 import { CreateRoomDto } from '../dto/create-room.dto';
 import { Room } from '../entities/roomEntity';
+import { CreateRoomUseCase } from '../use-cases/createRoomUseCase';
 
 @Injectable()
 export class RoomService {
-  constructor(private readonly roomRepository: RoomRepository) {}
+  constructor(private readonly createRoomUseCase: CreateRoomUseCase) {}
 
-  async create(createroomDto: CreateRoomDto): Promise<Room> {
-    return this.roomRepository.create(createroomDto);
+  async createRoom(createroomDto: CreateRoomDto): Promise<Room> {
+    return this.createRoomUseCase.execute(createroomDto);
   }
 }

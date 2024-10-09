@@ -8,7 +8,7 @@ export class RoomController {
   constructor(private readonly roomService: RoomService) {}
 
   @Post()
-  async create(@Body() createRoomDto: CreateRoomDto): Promise<Room> {
-    return this.roomService.create(createRoomDto);
+  async createRoom(@Body() createRoomDto: CreateRoomDto): Promise<Room> {
+    return this.roomService.createRoom(createRoomDto);
   }
 }
