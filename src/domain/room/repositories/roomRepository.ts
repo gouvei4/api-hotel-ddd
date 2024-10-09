@@ -16,4 +16,8 @@ export class RoomRepository {
   async findAll(): Promise<Room[]> {
     return this.roomModel.find().exec();
   }
+
+  async findById(id: string): Promise<Room | null> {
+    return this.roomModel.findById(id).exec();
+  }
 }

@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { RoomService } from '../service/room.service';
 import { CreateRoomDto } from '../dto/create-room.dto';
 import { Room } from '../entities/roomEntity';
@@ -15,5 +15,10 @@ export class RoomController {
   @Get()
   async getAllRoom(): Promise<Room[]> {
     return this.roomService.getAllRoom();
+  }
+
+  @Get(':id')
+  async getRoomById(@Param('id') id: string): Promise<Room> {
+    return this.roomService.getRoomById(id);
   }
 }
