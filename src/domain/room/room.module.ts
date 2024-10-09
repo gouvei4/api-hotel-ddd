@@ -7,6 +7,7 @@ import { RoomRepository } from './repositories/roomRepository';
 import { CreateRoomUseCase } from './use-cases/createRoomUseCase';
 import { GetAllRoomUseCase } from './use-cases/getAllRoomUseCase';
 import { GetRoomByIdUseCase } from './use-cases/getByIdRoomUsecase';
+import { UpdateRoomUseCase } from './use-cases/updateRoomUseCase';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { GetRoomByIdUseCase } from './use-cases/getByIdRoomUsecase';
     CreateRoomUseCase,
     GetAllRoomUseCase,
     GetRoomByIdUseCase,
+    UpdateRoomUseCase,
   ],
 })
 export class RoomModule {}
