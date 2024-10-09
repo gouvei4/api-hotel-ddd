@@ -12,12 +12,20 @@ export class GuestRepository {
     return this.guestModel.findOne({ document }).exec();
   }
 
-  async findyByEmail(email: string): Promise<Guest | null> {
+  async findByEmail(email: string): Promise<Guest | null> {
     return this.guestModel.findOne({ email }).exec();
   }
 
   async create(createUserDto: CreateGuestDto): Promise<Guest> {
     const createdGuest = new this.guestModel(createUserDto);
     return createdGuest.save();
+  }
+
+  async findAll(): Promise<Guest[]> {
+    return this.guestModel.find().exec();
+  }
+
+  async findById(id: string): Promise<Guest | null> {
+    return this.guestModel.findById(id).exec();
   }
 }

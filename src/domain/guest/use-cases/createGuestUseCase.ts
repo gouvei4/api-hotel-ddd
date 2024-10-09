@@ -17,7 +17,7 @@ export class CreateGuestUseCase {
       );
     }
 
-    const existingEmail = await this.guestRepository.findyByEmail(
+    const existingEmail = await this.guestRepository.findByEmail(
       createGuestDto.email,
     );
     if (existingEmail) {
