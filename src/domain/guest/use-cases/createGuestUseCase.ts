@@ -8,10 +8,10 @@ export class CreateGuestUseCase {
   constructor(private readonly guestRepository: GuestRepository) {}
 
   async execute(createGuestDto: CreateGuestDto): Promise<Guest> {
-    const existinDocument = await this.guestRepository.findByDocument(
-      createGuestDto.document,
+    const existinCpf = await this.guestRepository.findByDocument(
+      createGuestDto.cpf,
     );
-    if (existinDocument) {
+    if (existinCpf) {
       throw new BadRequestException(
         'A guest with this document is already registered',
       );

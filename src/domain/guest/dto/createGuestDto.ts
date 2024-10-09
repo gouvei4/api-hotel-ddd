@@ -4,6 +4,7 @@ import {
   IsPhoneNumber,
   IsString,
   Length,
+  Matches,
 } from '@nestjs/class-validator';
 
 export class CreateGuestDto {
@@ -23,11 +24,18 @@ export class CreateGuestDto {
 
   @IsString()
   @IsNotEmpty({ message: 'The phone number cannot be empty.' })
+  @Matches(/^55 \(\d{2}\) \d{5}-\d{4}$/, {
+    message: 'Phone number must be in the format 55 (XX) XXXXX-XXXX',
+  })
   @IsPhoneNumber('BR', {
     message: 'The telephone number must be a valid number in Brazilian format.',
   })
   readonly phone: string;
 
-  @IsNotEmpty({ message: 'The document is mandatory' })
-  readonly document: string;
+  @IsNotEmpty({ message: 'The cpf is mandatory' })
+  @Length(10, 14, { message: 'The CPF must be 10 to 14 characters long' })
+  @Matches(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/, {
+    message: 'CPF must be in the format XXX.XXX.XXX-XX',
+  })
+  readonly cpf: string;
 }
