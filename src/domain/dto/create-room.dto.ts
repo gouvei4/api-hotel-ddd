@@ -1,4 +1,6 @@
 import {
+  ArrayNotEmpty,
+  IsArray,
   IsIn,
   IsInt,
   IsNotEmpty,
@@ -23,7 +25,7 @@ export class CreateRoomDto {
 
   @IsNotEmpty({ message: 'Capacity is required' })
   @IsInt({ message: 'Capacity must be an integer' })
-  @IsPositive({ message: 'Capacity ust be a positive number' })
+  @IsPositive({ message: 'Capacity must be a positive number' })
   readonly capacity: number;
 
   @IsNotEmpty({ message: 'Price is required' })
@@ -39,9 +41,12 @@ export class CreateRoomDto {
   readonly status: string;
 
   @IsOptional()
-  @IsString({ message: 'Descripton ust be a string' })
+  @IsString({ message: 'Descripton must be a string' })
   readonly description?: string;
 
-  @IsString({ message: 'Amenities must be a string' })
-  readonly amenities?: string;
+  @IsOptional()
+  @IsArray()
+  @ArrayNotEmpty()
+  @IsString({ each: true, message: 'Each amenity must be a string' })
+  readonly amenities?: string[];
 }

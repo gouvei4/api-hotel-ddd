@@ -48,5 +48,5 @@ export class UpdateRoomDto implements Partial<CreateRoomDto> {
   @IsString({ message: 'Descripton ust be a string' })
   readonly description?: string;
   @IsString({ message: 'Amenities must be a string' })
-  readonly amenities?: string;
+  readonly amenities?: string[];
 }

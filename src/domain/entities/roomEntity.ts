@@ -23,6 +23,9 @@ export class Room extends Document {
 
   @Prop({ required: false })
   description: string;
+
+  @Prop({ type: String, ref: 'Guest', default: null })
+  reservedBy: string;
 }
 
 export const RoomSchema = SchemaFactory.createForClass(Room);

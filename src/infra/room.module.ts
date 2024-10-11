@@ -22,5 +22,6 @@ import { RoomService } from 'src/application/services/room.service';
     GetRoomByIdUseCase,
     UpdateRoomUseCase,
   ],
+  exports: [RoomRepository],
 })
 export class RoomModule {}

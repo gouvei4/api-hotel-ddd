@@ -27,4 +27,8 @@ export class RoomRepository {
       .findByIdAndUpdate(id, updateRoomDto, { new: true })
       .exec();
   }
+
+  async save(room: Room): Promise<Room> {
+    return room.save();
+  }
 }

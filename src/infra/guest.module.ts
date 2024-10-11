@@ -20,5 +20,6 @@ import { GuestService } from 'src/application/services/guest.service';
     GetAllGuestUseCase,
     GetGuestByIdUseCase,
   ],
+  exports: [GuestRepository],
 })
 export class GuestModule {}

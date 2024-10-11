@@ -16,7 +16,7 @@ export class Guest extends Document {
   phone: string;
 
   @Prop({ required: true })
-  document: string;
+  cpf: string;
 }
 
 export const GuestSchema = SchemaFactory.createForClass(Guest);

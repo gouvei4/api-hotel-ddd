@@ -16,6 +16,10 @@ export class GuestRepository {
     return this.guestModel.findOne({ email }).exec();
   }
 
+  async findByCpf(cpf: string): Promise<Guest> {
+    return this.guestModel.findOne({ cpf }).exec();
+  }
+
   async create(createUserDto: CreateGuestDto): Promise<Guest> {
     const createdGuest = new this.guestModel(createUserDto);
     return createdGuest.save();
