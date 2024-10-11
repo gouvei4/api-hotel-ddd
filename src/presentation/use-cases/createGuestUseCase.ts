@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { CreateGuestDto } from '../dto/createGuestDto';
-import { GuestRepository } from '../repositories/guestRepository';
-import { Guest } from '../entities/guestEntity';
+import { CreateGuestDto } from '../../domain/dto/createGuestDto';
+import { GuestRepository } from '../../infra/data/repositories/guestRepository';
+import { Guest } from '../../domain/entities/guestEntity';
 
 @Injectable()
 export class CreateGuestUseCase {

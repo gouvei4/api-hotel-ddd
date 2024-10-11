@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { Guest } from '../entities/guestEntity';
-import { GuestRepository } from '../repositories/guestRepository';
+import { Guest } from '../../domain/entities/guestEntity';
+import { GuestRepository } from '../../infra/data/repositories/guestRepository';
 
 @Injectable()
 export class GetGuestByIdUseCase {

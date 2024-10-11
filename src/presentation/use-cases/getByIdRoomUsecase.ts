@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { RoomRepository } from '../repositories/roomRepository';
-import { Room } from '../entities/roomEntity';
+import { Room } from '../../domain/entities/roomEntity';
+import { RoomRepository } from 'src/infra/data/repositories/roomRepository';
 
 @Injectable()
 export class GetRoomByIdUseCase {

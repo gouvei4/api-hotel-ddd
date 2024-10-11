@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { Guest } from '../entities/guestEntity';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
-import { CreateGuestDto } from '../dto/createGuestDto';
+import { CreateGuestDto } from '../../../domain/dto/createGuestDto';
+import { Guest } from 'src/domain/entities/guestEntity';
 
 @Injectable()
 export class GuestRepository {

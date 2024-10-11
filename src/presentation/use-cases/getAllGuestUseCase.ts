@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { GuestRepository } from '../repositories/guestRepository';
-import { Guest } from '../entities/guestEntity';
+import { GuestRepository } from '../../infra/data/repositories/guestRepository';
+import { Guest } from '../../domain/entities/guestEntity';
 
 @Injectable()
 export class GetAllGuestUseCase {

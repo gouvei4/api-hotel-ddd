@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { RoomRepository } from '../repositories/roomRepository';
-import { CreateRoomDto } from '../dto/create-room.dto';
-import { Room } from '../entities/roomEntity';
+import { CreateRoomDto } from '../../domain/dto/create-room.dto';
+import { Room } from '../../domain/entities/roomEntity';
+import { RoomRepository } from 'src/infra/data/repositories/roomRepository';
 
 @Injectable()
 export class CreateRoomUseCase {

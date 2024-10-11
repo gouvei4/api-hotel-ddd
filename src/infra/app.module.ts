@@ -1,10 +1,8 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
-import { GuestModule } from './domain/guest/guest.module';
-import { RoomModule } from './domain/room/room.module';
+import { GuestModule } from './guest.module';
+import { RoomModule } from './room.module';
 
 @Module({
   imports: [
@@ -21,7 +19,5 @@ import { RoomModule } from './domain/room/room.module';
     GuestModule,
     RoomModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}

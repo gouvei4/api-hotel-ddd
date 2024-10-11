@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Room } from '../entities/roomEntity';
-import { CreateRoomDto } from '../dto/create-room.dto';
+import { Room } from '../../../domain/entities/roomEntity';
+import { CreateRoomDto } from '../../../domain/dto/create-room.dto';
 import { Model } from 'mongoose';
-import { UpdateRoomDto } from '../dto/update-room.dto';
+import { UpdateRoomDto } from '../../../domain/dto/update-room.dto';
 
 Injectable();
 export class RoomRepository {

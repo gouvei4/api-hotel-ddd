@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import { CreateRoomDto } from '../dto/create-room.dto';
-import { Room } from '../entities/roomEntity';
-import { CreateRoomUseCase } from '../use-cases/createRoomUseCase';
-import { GetAllRoomUseCase } from '../use-cases/getAllRoomUseCase';
-import { GetRoomByIdUseCase } from '../use-cases/getByIdRoomUsecase';
-import { UpdateRoomDto } from '../dto/update-room.dto';
-import { UpdateRoomUseCase } from '../use-cases/updateRoomUseCase';
+import { CreateRoomDto } from 'src/domain/dto/create-room.dto';
+import { UpdateRoomDto } from 'src/domain/dto/update-room.dto';
+import { Room } from 'src/domain/entities/roomEntity';
+import { CreateRoomUseCase } from 'src/presentation/use-cases/createRoomUseCase';
+import { GetAllRoomUseCase } from 'src/presentation/use-cases/getAllRoomUseCase';
+import { GetRoomByIdUseCase } from 'src/presentation/use-cases/getByIdRoomUsecase';
+import { UpdateRoomUseCase } from 'src/presentation/use-cases/updateRoomUseCase';
 
 @Injectable()
 export class RoomService {
