@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { CreateGuestDto } from '../domain/dto/createGuestDto';
-import { Guest } from '../domain/entities/guestEntity';
-import { CreateGuestUseCase } from '../presentation/use-cases/createGuestUseCase';
-import { GetAllGuestUseCase } from '../presentation/use-cases/getAllGuestUseCase';
-import { GetGuestByIdUseCase } from '../presentation/use-cases/getByIdGuestUseCase';
+import { CreateGuestDto } from 'src/domain/dto/createGuestDto';
+import { Guest } from 'src/domain/entities/guestEntity';
+import { CreateGuestUseCase } from 'src/presentation/use-cases/createGuestUseCase';
+import { GetAllGuestUseCase } from 'src/presentation/use-cases/getAllGuestUseCase';
+import { GetGuestByIdUseCase } from 'src/presentation/use-cases/getByIdGuestUseCase';
 
 @Injectable()
 export class GuestService {

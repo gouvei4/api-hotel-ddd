@@ -7,7 +7,7 @@ import { GetRoomByIdUseCase } from '../presentation/use-cases/getByIdRoomUsecase
 import { UpdateRoomUseCase } from '../presentation/use-cases/updateRoomUseCase';
 import { RoomRepository } from 'src/infra/data/repositories/roomRepository';
 import { RoomController } from 'src/presentation/controllers/roomController';
-import { RoomService } from 'src/application/room.service';
+import { RoomService } from 'src/application/services/room.service';
 
 @Module({
   imports: [

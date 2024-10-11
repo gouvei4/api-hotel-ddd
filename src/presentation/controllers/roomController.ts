@@ -2,7 +2,7 @@ import { Body, Controller, Get, Param, Patch, Post } from '@nestjs/common';
 import { CreateRoomDto } from '../../domain/dto/create-room.dto';
 import { Room } from '../../domain/entities/roomEntity';
 import { UpdateRoomDto } from '../../domain/dto/update-room.dto';
-import { RoomService } from 'src/application/room.service';
+import { RoomService } from 'src/application/services/room.service';
 
 @Controller('room')
 export class RoomController {

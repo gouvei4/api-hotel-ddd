@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
-import { GuestService } from '../../application/guest.service';
 import { CreateGuestDto } from '../../domain/dto/createGuestDto';
 import { Guest } from '../../domain/entities/guestEntity';
+import { GuestService } from 'src/application/services/guest.service';
 
 @Controller('guests')
 export class GuestController {

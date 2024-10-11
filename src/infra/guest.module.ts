@@ -6,7 +6,7 @@ import { GuestRepository } from './data/repositories/guestRepository';
 import { CreateGuestUseCase } from '../presentation/use-cases/createGuestUseCase';
 import { GetAllGuestUseCase } from '../presentation/use-cases/getAllGuestUseCase';
 import { GetGuestByIdUseCase } from '../presentation/use-cases/getByIdGuestUseCase';
-import { GuestService } from 'src/application/guest.service';
+import { GuestService } from 'src/application/services/guest.service';
 
 @Module({
   imports: [
