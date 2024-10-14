@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
+import { Model, Types } from 'mongoose';
+import { Guest } from 'src/domain/entities/guestEntity';
 import { Reservation } from 'src/domain/entities/reservationEntity';
 
 @Injectable()
@@ -8,6 +9,8 @@ export class ReservationRepository {
   constructor(
     @InjectModel(Reservation.name)
     private reservationModel: Model<Reservation>,
+    @InjectModel(Guest.name)
+    private guestModel: Model<Guest>,
   ) {}
 
   async createReservation(data: Partial<Reservation>): Promise<Reservation> {
@@ -15,8 +18,11 @@ export class ReservationRepository {
     return newReservation.save();
   }
 
-  async findById(id: string): Promise<Reservation | null> {
-    return this.reservationModel.findById(id).exec();
+  async findById(id: string): Promise<Guest | null> {
+    if (!Types.ObjectId.isValid(id)) {
+      throw new Error('Invalid guestId');
+    }
+    return this.guestModel.findById(new Types.ObjectId(id)).exec();
   }
 
   async findByRoomId(roomId: string): Promise<Reservation[]> {

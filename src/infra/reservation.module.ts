@@ -10,10 +10,12 @@ import { ReservationRepository } from './data/repositories/reservationRepository
 import { CreateReservationUseCase } from 'src/presentation/use-cases/createReservationUseCase';
 import { RoomModule } from './room.module';
 import { GuestModule } from './guest.module';
+import { Guest, GuestSchema } from 'src/domain/entities/guestEntity';
 @Module({
   imports: [
     MongooseModule.forFeature([
       { name: Reservation.name, schema: ReservationSchema },
+      { name: Guest.name, schema: GuestSchema },
     ]),
     RoomModule,
     GuestModule,

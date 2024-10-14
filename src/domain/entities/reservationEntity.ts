@@ -8,8 +8,8 @@ export class Reservation {
   @Prop({ type: Types.ObjectId, ref: 'Room', required: true })
   room: Types.ObjectId;
 
-  @Prop({ type: Types.ObjectId, ref: 'User', required: true })
-  user: Types.ObjectId;
+  @Prop({ type: Types.ObjectId, ref: 'Guest', required: true })
+  guest: Types.ObjectId;
 
   @Prop({ required: true })
   checkInDate: Date;
